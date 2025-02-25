@@ -3,3 +3,29 @@
 
 # Ignore Gradle build output directory
 build
+.env
+.pem
+
+# IDE settings
+.idea/
+*.iml
+.vscode/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Build output directories
+/build
+/out
+/target
+
+# Log files
+*.log
+
+# Temporary files
+tmp/
+temp/
+
+# Local configuration (if not meant to be shared)
+*.local.properties
