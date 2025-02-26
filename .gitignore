@@ -5,8 +5,11 @@
 build
 .env
 .pem
+
+# Keys
 app/src/main/resources/keys/public_key_access.pem
 app/src/main/resources/keys/private_key_access.pem
+
 # IDE settings
 .idea/
 *.iml
@@ -20,6 +23,9 @@ Thumbs.db
 /build
 /out
 /target
+bin/
+*/bin/
+**/bin/
 
 # Log files
 *.log
@@ -30,5 +36,3 @@ temp/
 
 # Local configuration (if not meant to be shared)
 *.local.properties
-/bin/private-key.pem
-/bin/public-key.pem

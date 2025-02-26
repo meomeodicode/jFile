@@ -20,8 +20,8 @@ import org.springframework.stereotype.Component;
 @Component
 public class Keyloader {
     private static final Logger logger = LoggerFactory.getLogger(Keyloader.class);
-    private static final String PRIVATE_KEY_PATH = "keys/private_key.pem";
-    private static final String PUBLIC_KEY_PATH = "keys/public_key.pem";
+    private static final String PRIVATE_KEY_PATH = "keys/private_key_access.pem";
+    private static final String PUBLIC_KEY_PATH = "keys/public_key_access.pem";
 
     public PrivateKey loadPrivateKey() throws Exception {
         try (InputStream contentStream = getClass().getClassLoader().getResourceAsStream(PRIVATE_KEY_PATH)) {
