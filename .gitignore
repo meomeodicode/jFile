@@ -5,7 +5,8 @@
 build
 .env
 .pem
-
+app/src/main/resources/keys/public_key_access.pem
+app/src/main/resources/keys/private_key_access.pem
 # IDE settings
 .idea/
 *.iml
@@ -29,3 +30,5 @@ temp/
 
 # Local configuration (if not meant to be shared)
 *.local.properties
+/bin/private-key.pem
+/bin/public-key.pem
