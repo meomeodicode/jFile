@@ -15,4 +15,4 @@ public class App {
         application.addInitializers(new DotenvInitializer());
         application.run(args);
     }
-}
+}   

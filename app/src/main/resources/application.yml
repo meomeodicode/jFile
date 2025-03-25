@@ -16,11 +16,15 @@ spring:
             downloads: download-topics
         consumer:
             group-id: download-service-group
+            auto-offset-reset: earliest
             bootstrap-servers: localhost:9092
             key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
             value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
             properties:
                 spring.json.trusted.packages: "jfile.model"
+                spring.json.type.mapping: downloadTask:jfile.model.DownloadTask
+        producer:
+            value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
     jpa:
         show-sql: true
         
@@ -33,3 +37,10 @@ logging:
     jfile: DEBUG
     org.springframework.security: DEBUG
     org.springframework.web: DEBUG
+
+minio:
+    endpoint: ${MINIO_ENDPOINT}
+    access-key: ${MINIO_ACCESS_KEY}
+    secret-key: ${MINIO_SECRET_KEY}
+    bucket: ${MINIO_BUCKET}
+

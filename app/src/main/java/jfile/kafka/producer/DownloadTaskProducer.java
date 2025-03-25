@@ -1,15 +1,18 @@
 package jfile.kafka.producer;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Component;
 import jfile.model.DownloadTask;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 @Component
 public class DownloadTaskProducer {
     private static final Logger logger = LoggerFactory.getLogger(DownloadTaskProducer.class);
-    private static final String TOPIC = "download-tasks";
+    @Value("${spring.kafka.topics.downloads}")
+    private String TOPIC;
     private final KafkaTemplate<String, DownloadTask> kafkaTemplate;
 
     public DownloadTaskProducer(KafkaTemplate<String, DownloadTask> kafkaTemplate) {
